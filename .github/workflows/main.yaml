@@ -31,5 +31,5 @@ jobs:
     - name: Run command
       run: |
         conda install -c conda-forge -y cuda=12.8 cuda-toolkit cudnn
-        which python
-        nvcc test.cu -o test
+        conda run -n base which python
+        conda run -n base nvcc test.cu -o test
