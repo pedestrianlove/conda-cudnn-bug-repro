@@ -31,5 +31,6 @@ jobs:
     - name: Run command
       run: |
         conda install -c conda-forge -y cuda=12.8 cuda-toolkit cudnn
-        conda run -n base which python
+        conda run -n base which nvcc
+        find /usr/share/miniconda | grep cudnn.h
         conda run -n base nvcc test.cu -o test
